@@ -1,7 +1,7 @@
 var app = angular.module("app", ['jtt_tumblr']);
 app.controller('controller', ['$scope', 'tumblrFactory', function($scope, tumblrFactory) {
 
-    var _api_key = '<YOUR_TUMBLR_ACCESS_TOKEN>';
+    var _api_key = '<YOUR_TUMBLR_API_KEY>';
 
     tumblrFactory.getPostsFromPage({
         page:"namikamusik",
