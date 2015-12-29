@@ -38,7 +38,7 @@ tumblrFactory.getInfoFromPage({
 ```js
 tumblrFactory.getAvatarFromPage({
     page:"<PAGE_NAME>",
-    size:"<AVATAR_SIZE>", // (optional) size of the avatar. Valid values: 16, 24, 30, 40, 48, 64, 96, 128, 512
+    size:"<AVATAR_SIZE>", // (optional) Valid values: 16, 24, 30, 40, 48, 64, 96, 128, 512
     api_key:"<YOUR_TUMBLR_API_KEY>",
 }).success(function (_data) {
     //on success
