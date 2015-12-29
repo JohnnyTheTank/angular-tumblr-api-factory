@@ -63,7 +63,7 @@ tumblrFactory.getPostsFromPage({
 });
 ```
 
-## Tumblr Graph JSON API
+## Tumblr JSON API
 
 * docs: https://www.tumblr.com/docs/en/api/v2
 * official api console: https://api.tumblr.com/console/calls/user/info
