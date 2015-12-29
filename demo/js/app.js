@@ -8,7 +8,24 @@ app.controller('controller', ['$scope', 'tumblrFactory', function($scope, tumblr
         limit:20,
         api_key:_api_key,
     }).success(function(_data){
-        console.log("posts");
+        console.log("posts from page");
+        console.log(_data);
+    });
+
+    tumblrFactory.getInfoFromPage({
+        page:"namikamusik",
+        api_key:_api_key,
+    }).success(function(_data){
+        console.log("info from page");
+        console.log(_data);
+    });
+
+    tumblrFactory.getAvatarFromPage({
+        page:"namikamusik",
+        size:512,
+        api_key:_api_key,
+    }).success(function(_data){
+        console.log("avatar from page");
         console.log(_data);
     });
 

@@ -20,12 +20,42 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ### factory methods
 
-#### getPosts
+#### getInfo
 
 ```js
+tumblrFactory.getInfoFromPage({
+    page:"<PAGE_NAME>",
+    api_key:"<YOUR_TUMBLR_API_KEY>",
+}).success(function (_data) {
+    //on success
+}).error(function (_data) {
+    //on error
+});
+```
+
+#### getAvatar
+
+```js
+tumblrFactory.getAvatarFromPage({
+    page:"<PAGE_NAME>",
+    size:"<AVATAR_SIZE>", // (optional) size of the avatar. Valid values: 16, 24, 30, 40, 48, 64, 96, 128, 512
+    api_key:"<YOUR_TUMBLR_API_KEY>",
+}).success(function (_data) {
+    //on success
+}).error(function (_data) {
+    //on error
+});
+```
+
+#### getPosts
+Get all parameters [here](https://www.tumblr.com/docs/en/api/v2#posts)
+```js
+// all parameters: https://www.tumblr.com/docs/en/api/v2#posts
 tumblrFactory.getPostsFromPage({
     page:"<PAGE_NAME>",
-    limit:"<LIMIT>", // (optional) valid values: 0-100 | default: 25
+    limit:"<LIMIT>", // (optional) valid values: 0-20 | default: 20
+    type:"<POST_TYPE>", // (optional) valid values: text, quote, link, answer, video, audio, photo, chat
+    api_key:"<YOUR_TUMBLR_API_KEY>",
 }).success(function (_data) {
     //on success
 }).error(function (_data) {

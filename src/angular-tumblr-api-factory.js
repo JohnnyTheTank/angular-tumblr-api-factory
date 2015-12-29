@@ -23,6 +23,30 @@ angular.module("jtt_tumblr", [])
             );
         };
 
+        tumblrFactory.getInfoFromPage = function (_params) {
+            var tumblrSearchData = tumblrSearchDataService.getNew("infoFromPage", _params);
+
+            return $http.jsonp(
+                tumblrSearchData.url,
+                {
+                    method: 'GET',
+                    params: tumblrSearchData.object,
+                }
+            );
+        };
+
+        tumblrFactory.getAvatarFromPage = function (_params) {
+            var tumblrSearchData = tumblrSearchDataService.getNew("avatarFromPage", _params);
+
+            return $http.jsonp(
+                tumblrSearchData.url,
+                {
+                    method: 'GET',
+                    params: tumblrSearchData.object,
+                }
+            );
+        };
+
         return tumblrFactory;
     }])
     .service('tumblrSearchDataService', function () {
@@ -64,12 +88,29 @@ angular.module("jtt_tumblr", [])
 
             switch (_type) {
                 case "postsFromPage":
-
                     tumblrSearchData = this.fillDataInObjectByList(tumblrSearchData, _params, [
                         'type', 'id', 'tag', 'offset', 'reblog_info', 'notes_info', 'filter'
                     ]);
 
                     tumblrSearchData.url = this.getApiBaseUrl()+_params.page+".tumblr.com/posts";
+                    break;
+
+                case "infoFromPage":
+                    tumblrSearchData.object.limit = undefined;
+
+                    tumblrSearchData.url = this.getApiBaseUrl()+_params.page+".tumblr.com/info";
+                    break;
+
+                case "avatarFromPage":
+                    tumblrSearchData.object.limit = undefined;
+
+                    var size = "";
+
+                    if (typeof _params.size !== "undefined") {
+                        size = "/"+_params.size;
+                    }
+
+                    tumblrSearchData.url = this.getApiBaseUrl()+_params.page+".tumblr.com/avatar"+size;
                     break;
 
             }
