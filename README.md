@@ -24,13 +24,8 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ```js
 tumblrFactory.getPostsFromPage({
-    pageId:"<PAGE_ID>",
+    page:"<PAGE_NAME>",
     limit:"<LIMIT>", // (optional) valid values: 0-100 | default: 25
-    until:"<UNTIL>", // (optional)
-    since:"<SINCE>", // (optional)
-    __previous:"<PREVIOUS>", // (optional)
-    __paging_token:"<PAGING_TOKEN>", // (optional)
-    access_token:"<ACCESS_TOKEN>"
 }).success(function (_data) {
     //on success
 }).error(function (_data) {
