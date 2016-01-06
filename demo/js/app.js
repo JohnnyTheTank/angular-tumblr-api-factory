@@ -7,7 +7,7 @@ app.controller('controller', ['$scope', 'tumblrFactory', function($scope, tumblr
         page:"namikamusik",
         limit:20,
         api_key:_api_key,
-    }).success(function(_data){
+    }).then(function(_data){
         console.log("posts from page");
         console.log(_data);
     });
@@ -15,7 +15,7 @@ app.controller('controller', ['$scope', 'tumblrFactory', function($scope, tumblr
     tumblrFactory.getInfoFromPage({
         page:"namikamusik",
         api_key:_api_key,
-    }).success(function(_data){
+    }).then(function(_data){
         console.log("info from page");
         console.log(_data);
     });
@@ -24,7 +24,7 @@ app.controller('controller', ['$scope', 'tumblrFactory', function($scope, tumblr
         page:"namikamusik",
         size:512,
         api_key:_api_key,
-    }).success(function(_data){
+    }).then(function(_data){
         console.log("avatar from page");
         console.log(_data);
     });
