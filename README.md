@@ -1,5 +1,8 @@
 **angular-tumblr-api-factory** is an angularjs module with a tumblr api factory.
 
+[![npm version](https://badge.fury.io/js/angular-tumblr-api-factory.png)](https://badge.fury.io/js/angular-tumblr-api-factory)
+[![Bower version](https://badge.fury.io/bo/angular-tumblr-api-factory.png)](https://badge.fury.io/bo/angular-tumblr-api-factory)
+
 Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ## Usage
