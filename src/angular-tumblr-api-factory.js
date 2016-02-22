@@ -53,7 +53,7 @@ angular.module("jtt_tumblr", [])
         this.getApiBaseUrl = function (_params) {
             var version;
 
-            if(_params && typeof _params.version !== "undefined") {
+            if(_params && angular.isDefined(_params.version)) {
                 version = _params.version+"/";
             } else {
                 version = "v2/";
@@ -64,7 +64,7 @@ angular.module("jtt_tumblr", [])
         this.fillDataInObjectByList = function(_object, _params, _list) {
 
             angular.forEach(_list, function (value, key) {
-                if(typeof _params[value] !== "undefined") {
+                if(angular.isDefined(_params[value])) {
                     _object.object[value] = _params[value];
                 }
             });
@@ -82,7 +82,7 @@ angular.module("jtt_tumblr", [])
                 url: "",
             };
 
-            if (typeof _params.limit !== "undefined") {
+            if (angular.isDefined(_params.limit)) {
                 tumblrSearchData.object.limit = _params.limit;
             }
 
@@ -106,7 +106,7 @@ angular.module("jtt_tumblr", [])
 
                     var size = "";
 
-                    if (typeof _params.size !== "undefined") {
+                    if (angular.isDefined(_params.size)) {
                         size = "/"+_params.size;
                     }
 
